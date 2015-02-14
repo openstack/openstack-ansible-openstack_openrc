@@ -13,12 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Create openrc file
-  template:
-    src: openrc
-    dest: "{{ openrc_file_dest }}"
-    owner: "{{ openrc_file_owner }}"
-    group: "{{ openrc_file_group }}"
-    mode: "0600"
-  tags:
-    - openstack-openrc-file
+## Endpoint types
+openrc_cinder_endpoint_type: internalURL
+openrc_nova_endpoint_type: internalURL
+openrc_os_endpoint_type: internalURL
+
+## Default credentials
+openrc_os_username: admin
+openrc_os_tenant_name: admin
+openrc_os_auth_url: "http://127.0.0.1:5000"
+
+## Create file
+openrc_file_dest: "{{ ansible_env.HOME }}/openrc"
+openrc_file_owner: "{{ ansible_user_id }}"
+openrc_file_group: "{{ ansible_user_id }}"

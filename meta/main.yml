@@ -13,12 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Create openrc file
-  template:
-    src: openrc
-    dest: "{{ openrc_file_dest }}"
-    owner: "{{ openrc_file_owner }}"
-    group: "{{ openrc_file_group }}"
-    mode: "0600"
-  tags:
-    - openstack-openrc-file
+galaxy_info:
+  author: rcbops
+  description: Inclusion of the typical openstack openrc file
+  company: Rackspace
+  license: Apache2
+  min_ansible_version: 1.6.6
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+  categories:
+    - cloud
+    - openrc
+    - development
+    - openstack
+dependencies: []
