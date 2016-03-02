@@ -1,23 +1,40 @@
-OpenStack openrc file
-#####################
+OpenStack-Ansible openrc file
+#############################
 :tags: openstack, openrc, cloud, ansible
 :category: \*nix
 
-Role for the creation of an openrc file for the intended purpose to set credentials up for use within OpenStack.
+This Ansible role creates the configuration files used by various OpenStack
+CLI tools. For more information about these tools, see the `OpenStack CLI
+Reference`_.
+
+.. _OpenStack CLI Reference: http://docs.openstack.org/cli-reference/overview.html
+
+Required Variables
+------------------
+
+To use this role, define the following variables:
 
 .. code-block:: yaml
 
-    - name: Install memcached
-      hosts: memcached
+    keystone_service_adminuri_insecure: false
+    keystone_service_internaluri_insecure: false
+    openrc_os_password: secrete
+    openrc_os_domain_name: Default
+
+Example Playbook
+----------------
+
+.. code-block:: yaml
+
+    - name: Install openrc
+      hosts: all
       user: root
       roles:
-        - { role: "memcached_server", tags: [ "memcached-server" ] }
+        - { role: "openstack-ansible-openstack_openrc",
+            tags: [ "openstack_openrc" ]
+          }
       vars:
-        openrc_cinder_endpoint_type: internalURL
-        openrc_nova_endpoint_type: internalURL
-        openrc_os_endpoint_type: internalURL
-        openrc_os_username: admin
-        openrc_os_tenant_name: admin
-        openrc_os_auth_url: "http://10.0.0.1:5000"
-        openrc_os_password: "secrete"
-        openrc_file_dest: /root/openrc
+        keystone_service_adminuri_insecure: false
+        keystone_service_internaluri_insecure: false
+        openrc_os_password: secrete
+        openrc_os_domain_name: Default
