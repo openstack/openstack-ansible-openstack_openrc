@@ -12,9 +12,6 @@ export OS_ENDPOINT_TYPE={{ openrc_os_endpoint_type }}
 export OS_USERNAME={{ openrc_os_username }}
 export OS_PASSWORD={{ openrc_os_password }}
 export OS_PROJECT_NAME={{ openrc_os_tenant_name }}
-# NOTE(sigmavirus24): The tenant name setting should be removed when
-# python-cinderclient stops checking for it and failing if it doesn't exist.
-export OS_TENANT_NAME={{ openrc_os_tenant_name }}
 export OS_AUTH_URL={{ openrc_os_auth_url }}
 export OS_NO_CACHE=1
 export OS_USER_DOMAIN_NAME={{ openrc_os_domain_name }}
