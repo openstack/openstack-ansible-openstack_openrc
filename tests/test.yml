@@ -32,3 +32,11 @@
       assert:
         that:
           - "openrc_file.stat.exists"
+    - name: Check /root/.config/openstack/clouds.yaml file
+      stat:
+        path: /root/.config/openstack/clouds.yaml
+      register: clouds_file
+    - name: Check role functions
+      assert:
+        that:
+          - "clouds_file.stat.exists"

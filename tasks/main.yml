@@ -33,9 +33,9 @@
   tags:
     - openstack-openrc-file
 
-- name: Create clouds.yml file
+- name: Create clouds.yaml file
   template:
-    src: clouds.yml
+    src: clouds.yaml.j2
     dest: "{{ openrc_clouds_yml_file_dest }}"
     owner: "{{ openrc_clouds_yml_file_owner }}"
     group: "{{ openrc_clouds_yml_file_group }}"
