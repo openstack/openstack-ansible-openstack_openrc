@@ -15,7 +15,7 @@
 
 - name: Create openrc file
   template:
-    src: openrc
+    src: openrc.j2
     dest: "{{ openrc_file_dest }}"
     owner: "{{ openrc_file_owner }}"
     group: "{{ openrc_file_group }}"
