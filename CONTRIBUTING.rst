@@ -28,11 +28,29 @@ the workflow documented at: "http://docs.openstack.org/infra/manual/developers.h
 
 Pull requests submitted through GitHub will be ignored and closed without regard.
 
+If you wish to test your changes locally prior to submitting them for review
+you can use the ``Vagrantfile`` included in the root of this repository. It
+aims to replicate the gate check testing that will be done by OpenStack CI
+once your review has been submitted.
+
+To run tests:
+
+.. code-block:: shell-session
+
+        # vagrant up
+
+The Vagrant box will run all tests and report status in the output. If you
+need to iterate through a fix/test cycle, tests can be re-run in a running
+Vagrant box with:
+
+.. code-block:: shell-session
+
+        # vagrant provision
 
 Extra
 -----
 
-Tags: 
+Tags:
     If it's a bug that needs fixing in a branch in addition to Master, add a '\<release\>-backport-potential' tag (eg ``juno-backport-potential``).  There are predefined tags that will autocomplete.
 
 Status:
@@ -45,7 +63,7 @@ Importance:
 Style guide
 -----------
 
-When creating tasks and other roles for use in Ansible please create then using the YAML dictionary format. 
+When creating tasks and other roles for use in Ansible please create then using the YAML dictionary format.
 
 Example YAML dictionary format:
     .. code-block:: yaml
