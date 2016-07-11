@@ -10,7 +10,7 @@ Reference`_.
 .. _OpenStack CLI Reference: http://docs.openstack.org/cli-reference/overview.html
 
 Required Variables
-------------------
+==================
 
 To use this role, define the following variables:
 
@@ -22,7 +22,7 @@ To use this role, define the following variables:
     openrc_os_domain_name: Default
 
 Example Playbook
-----------------
+================
 
 .. code-block:: yaml
 
@@ -38,3 +38,12 @@ Example Playbook
         keystone_service_internaluri_insecure: false
         openrc_os_password: secrete
         openrc_os_domain_name: Default
+
+Tags
+====
+
+This role supports two tags: ``openrc-install`` and ``openrc-config``
+
+The ``openrc-install`` tag can be used to install and upgrade.
+
+The ``openrc-config`` tag can be used to manage configuration.

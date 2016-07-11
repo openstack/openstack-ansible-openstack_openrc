@@ -21,7 +21,8 @@
     group: "{{ openrc_file_group }}"
     mode: "0600"
   tags:
-    - openstack-openrc-file
+    - openrc-install
+    - openrc-config
 
 - name: Create OpenStack client configuration directory
   file:
@@ -31,7 +32,7 @@
     mode: "0600"
     state: directory
   tags:
-    - openstack-openrc-file
+    - openrc-install
 
 - name: Create clouds.yaml file
   template:
@@ -41,4 +42,5 @@
     group: "{{ openrc_clouds_yml_file_group }}"
     mode: "0600"
   tags:
-    - openstack-openrc-file
+    - openrc-install
+    - openrc-config
