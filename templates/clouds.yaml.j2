@@ -9,7 +9,7 @@ clouds:
       password: {{ openrc_os_password }}
       user_domain_name: {{ openrc_os_domain_name }}
       project_domain_name: {{ openrc_os_domain_name }}
-    region_name: {{ openrc_clouds_yml_region_name }}
+    region_name: {{ openrc_region_name }}
     interface: {{ openrc_clouds_yml_interface }}
 {% if openrc_os_auth_url.endswith('v3') %}
     identity_api_version: "3"

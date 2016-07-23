@@ -17,6 +17,7 @@ export OS_AUTH_URL={{ openrc_os_auth_url }}
 export OS_NO_CACHE=1
 export OS_USER_DOMAIN_NAME={{ openrc_os_domain_name }}
 export OS_PROJECT_DOMAIN_NAME={{ openrc_os_domain_name }}
+export OS_REGION_NAME={{ openrc_region_name }}
 
 # For openstackclient
 {% if openrc_os_auth_url.endswith('v3') %}
