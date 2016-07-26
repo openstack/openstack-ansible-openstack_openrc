@@ -47,3 +47,4 @@ This role supports two tags: ``openrc-install`` and ``openrc-config``
 The ``openrc-install`` tag can be used to install and upgrade.
 
 The ``openrc-config`` tag can be used to manage configuration.
+
