@@ -1,0 +1,12 @@
+- name: Install openrc
+  hosts: all
+  user: root
+  roles:
+    - { role: "openstack-ansible-openstack_openrc",
+        tags: [ "openstack_openrc" ]
+      }
+  vars:
+  keystone_service_adminuri_insecure: false
+  keystone_service_internaluri_insecure: false
+  openrc_os_password: secrete
+  openrc_os_domain_name: Default
