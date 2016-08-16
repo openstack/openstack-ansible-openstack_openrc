@@ -8,6 +8,13 @@ OpenStack CLI tools. For more information about these tools, see the
 
 .. _OpenStack CLI Reference: http://docs.openstack.org/cli-reference/overview.html
 
+Default variables
+~~~~~~~~~~~~~~~~~
+
+.. literalinclude:: ../../defaults/main.yml
+   :language: yaml
+   :start-after: under the License.
+
 Required variables
 ~~~~~~~~~~~~~~~~~~
 
