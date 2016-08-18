@@ -1,7 +1,5 @@
 OpenStack openrc file
 #####################
-:tags: openstack, openrc, cloud, ansible
-:category: \*nix
 
 contributor guidelines
 ^^^^^^^^^^^^^^^^^^^^^^

@@ -10,6 +10,3 @@ Documentation for the project can be found at:
 
 The project home is at:
   http://launchpad.net/openstack-ansible
-
-:tags: openstack, openrc, cloud, ansible
-:category: \*nix
