@@ -15,14 +15,13 @@
 
 - name: Playbook for role testing
   hosts: localhost
-  connection: local
   vars:
-    keystone_service_adminuri_insecure: false
-    keystone_service_internaluri_insecure: false
+    keystone_service_adminuri_insecure: False
+    keystone_service_internaluri_insecure: False
     openrc_os_password: secrete
     openrc_os_domain_name: Default
   roles:
-    - role: "{{ rolename | basename }}"
+    - role: "openstack_openrc"
   post_tasks:
     - name: Check /root/openrc file
       stat:
