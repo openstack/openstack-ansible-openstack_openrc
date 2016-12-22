@@ -8,6 +8,9 @@ OpenStack CLI tools. For more information about these tools, see the
 
 .. _OpenStack CLI Reference: http://docs.openstack.org/cli-reference/overview.html
 
+To clone or view the source code for this repository, visit the role repository
+for `openstack_openrc <https://github.com/openstack/openstack-ansible-openstack_openrc>`_.
+
 Default variables
 ~~~~~~~~~~~~~~~~~
 
