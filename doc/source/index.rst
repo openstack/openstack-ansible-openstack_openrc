@@ -30,9 +30,10 @@ To use this role, define the following variables:
 Tags
 ~~~~
 
-This role supports two tags: ``openrc-install`` and ``openrc-config``.
-The ``openrc-install`` tag can be used to install and upgrade. The
-``openrc-config`` tag can be used to manage configuration.
+This role supports two tags: ``openstack_openrc-install`` and
+``openstack_openrc-config``.  The ``openstack_openrc-install`` tag is only
+used to setup the appropriate folders. The ``openstack_openrc-config`` tag
+can be used to manage configuration.
 
 
 Example playbook
