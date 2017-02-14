@@ -18,14 +18,15 @@
   roles:
     - role: "openstack_openrc"
   post_tasks:
-    - name: Check /root/openrc file
-      stat:
+    - name: Slurp /root/openrc file
+      slurp:
         path: /root/openrc
       register: openrc_file
     - name: Check role functions
       assert:
         that:
-          - "openrc_file.stat.exists"
+          - "'export OS_USER_DOMAIN_NAME=Default' in (openrc_file.content | b64decode)"
+          - "'export OS_PASSWORD=\\'secrete\\'' in (openrc_file.content | b64decode)"
     - name: Check /root/.config/openstack/clouds.yaml file
       stat:
         path: /root/.config/openstack/clouds.yaml
