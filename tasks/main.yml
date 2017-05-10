@@ -19,7 +19,7 @@
     dest: "{{ openrc_file_dest }}"
     owner: "{{ openrc_file_owner }}"
     group: "{{ openrc_file_group }}"
-    mode: "0600"
+    mode: "{{ openrc_file_mode }}"
   tags:
     - openstack_openrc-config
 
@@ -28,7 +28,7 @@
     dest: "{{ openrc_openstack_client_config_dir_dest }}"
     owner: "{{ openrc_openstack_client_config_dir_owner }}"
     group: "{{ openrc_openstack_client_config_dir_group }}"
-    mode: "0600"
+    mode: "{{ openrc_openstack_client_config_dir_mode }}"
     state: directory
   tags:
     - openstack_openrc-install
@@ -39,6 +39,6 @@
     dest: "{{ openrc_clouds_yml_file_dest }}"
     owner: "{{ openrc_clouds_yml_file_owner }}"
     group: "{{ openrc_clouds_yml_file_group }}"
-    mode: "0600"
+    mode: "{{ openrc_clouds_yml_file_mode }}"
   tags:
     - openstack_openrc-config
