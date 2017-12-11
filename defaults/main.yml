@@ -26,8 +26,9 @@ openrc_os_auth_url: "http://127.0.0.1:5000"
 openrc_region_name: RegionOne
 
 ## Deliberately allow access to SSL endpoints with bad certificates
-openrc_insecure: "{{ (keystone_service_adminuri_insecure | bool or keystone_service_internaluri_insecure | bool) | default(false) }}"
-
+openrc_insecure: >-
+  {{ (keystone_service_adminuri_insecure | default(false) | bool or
+      keystone_service_internaluri_insecure | default(false) | bool) }}
 ## Create openrc file
 openrc_file_dest: "{{ ansible_env.HOME }}/openrc"
 openrc_file_owner: "{{ ansible_user_id }}"
