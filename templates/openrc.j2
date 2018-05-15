@@ -16,8 +16,10 @@ export OS_PROJECT_NAME={{ openrc_os_tenant_name }}
 export OS_TENANT_NAME={{ openrc_os_tenant_name }}
 export OS_AUTH_URL={{ openrc_os_auth_url }}
 export OS_NO_CACHE=1
+{% if openrc_os_domain_name is defined %}
 export OS_USER_DOMAIN_NAME={{ openrc_os_domain_name }}
 export OS_PROJECT_DOMAIN_NAME={{ openrc_os_domain_name }}
+{% endif %}
 export OS_REGION_NAME={{ openrc_region_name }}
 
 # For openstackclient
