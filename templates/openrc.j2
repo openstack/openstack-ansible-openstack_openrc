@@ -29,6 +29,10 @@ export OS_IDENTITY_API_VERSION=3
 export OS_AUTH_VERSION=3
 {% endif %}
 
+{% if openrc_os_tenant_id is defined %}
+export OS_TENANT_ID={{ openrc_os_tenant_id }}
+{% endif %}
+
 {% if openrc_insecure | bool %}
 # Convenience Aliases for Self-Signed Certs
 alias cinder='cinder --insecure'
