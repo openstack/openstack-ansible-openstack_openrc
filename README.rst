@@ -17,5 +17,8 @@ OpenStack CLI tools.
 Documentation for the project can be found at:
   https://docs.openstack.org/openstack-ansible-openstack_openrc/latest/
 
+Release notes for the project can be found at:
+  https://docs.openstack.org/releasenotes/openstack-ansible-openstack_openrc/
+
 The project home is at:
   https://launchpad.net/openstack-ansible
