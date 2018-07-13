@@ -22,6 +22,7 @@ openrc_clouds_yml_interface: internal
 ## Default credentials
 openrc_os_username: admin
 openrc_os_tenant_name: admin
+openrc_os_auth_type: password
 openrc_os_auth_url: "http://127.0.0.1:5000"
 openrc_region_name: RegionOne
 
