@@ -16,3 +16,7 @@ clouds:
 {% else %}
     identity_api_version: "2.0"
 {% endif %}
+{% if openrc_insecure | bool %}
+    verify: false
+    insecure: true
+{% endif %}
