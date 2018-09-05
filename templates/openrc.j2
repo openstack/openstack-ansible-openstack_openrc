@@ -30,8 +30,8 @@ export OS_AUTH_VERSION=2
 {% endif %}
 
 {% if openrc_insecure | bool %}
-export OS_INSECURE=1
-export OS_VERIFY=
+export OS_INSECURE='true'
+export OS_VERIFY='false'
 # Convenience Aliases for Self-Signed Certs
 alias cinder='cinder --insecure'
 alias glance='glance --insecure'
