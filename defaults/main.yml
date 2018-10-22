@@ -25,6 +25,7 @@ openrc_os_tenant_name: admin
 openrc_os_auth_type: password
 openrc_os_auth_url: "http://127.0.0.1:5000"
 openrc_region_name: RegionOne
+openrc_os_domain_name: Default
 
 ## Deliberately allow access to SSL endpoints with bad certificates
 openrc_insecure: >-

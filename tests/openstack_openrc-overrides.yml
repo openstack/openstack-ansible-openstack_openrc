@@ -13,7 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-keystone_service_adminuri_insecure: False
-keystone_service_internaluri_insecure: False
 openrc_os_password: secrete
-openrc_os_domain_name: Default
