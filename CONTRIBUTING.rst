@@ -49,7 +49,7 @@ Extra
 -----
 
 Tags:
-    If it's a bug that needs fixing in a branch in addition to Master, add a '\<release\>-backport-potential' tag (eg ``juno-backport-potential``).  There are predefined tags that will autocomplete.
+    If it's a bug that needs fixing in a branch in addition to Master, add a '\<release\>-backport-potential' tag (eg ``juno-backport-potential``). There are predefined tags that will autocomplete.
 
 Status:
     Please leave this alone, it should be New till someone triages the issue.
