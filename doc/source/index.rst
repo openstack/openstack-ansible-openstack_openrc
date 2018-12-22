@@ -6,7 +6,7 @@ This Ansible role creates the configuration files used by various
 OpenStack CLI tools. For more information about these tools, see the
 `OpenStack CLI Reference`_.
 
-.. _OpenStack CLI Reference: http://docs.openstack.org/cli-reference/overview.html
+.. _OpenStack CLI Reference: https://docs.openstack.org/cli-reference/overview.html
 
 To clone or view the source code for this repository, visit the role repository
 for `openstack_openrc <https://github.com/openstack/openstack-ansible-openstack_openrc>`_.
@@ -34,7 +34,7 @@ Tags
 ~~~~
 
 This role supports two tags: ``openstack_openrc-install`` and
-``openstack_openrc-config``.  The ``openstack_openrc-install`` tag is only
+``openstack_openrc-config``. The ``openstack_openrc-install`` tag is only
 used to setup the appropriate folders. The ``openstack_openrc-config`` tag
 can be used to manage configuration.
 
