@@ -16,6 +16,7 @@
 ## Endpoint types
 openrc_cinder_endpoint_type: internalURL
 openrc_nova_endpoint_type: internalURL
+openrc_manila_endpoint_type: internalURL
 openrc_os_endpoint_type: internalURL
 openrc_clouds_yml_interface: internal
 
