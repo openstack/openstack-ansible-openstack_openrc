@@ -20,6 +20,9 @@ galaxy_info:
   license: Apache2
   min_ansible_version: 1.6.6
   platforms:
+    - name: Debian
+      versions:
+        - stretch
     - name: Ubuntu
       versions:
         - xenial
