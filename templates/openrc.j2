@@ -1,5 +1,5 @@
 # {{ ansible_managed }}
-export LC_ALL=C.UTF-8
+export LC_ALL={{ openrc_locale }}
 
 # COMMON CINDER ENVS
 export CINDER_ENDPOINT_TYPE={{ openrc_cinder_endpoint_type }}
