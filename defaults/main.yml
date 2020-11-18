@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+## Use System Scope Authentication
+openrc_system_scope: false
+
 ## Endpoint types
 openrc_cinder_endpoint_type: internalURL
 openrc_nova_endpoint_type: internalURL
@@ -32,8 +35,9 @@ openrc_os_domain_name: Default
 openrc_insecure: >-
   {{ (keystone_service_adminuri_insecure | default(false) | bool or
       keystone_service_internaluri_insecure | default(false) | bool) }}
-## Create openrc file
+## Create openrc file(s)
 openrc_file_dest: "{{ ansible_env.HOME }}/openrc"
+openrc_system_file_dest: "{{ openrc_file_dest | dirname }}/openrc.system_scope"
 openrc_file_owner: "{{ ansible_user_id }}"
 openrc_file_group: "{{ ansible_user_id }}"
 openrc_file_mode: "0600"

@@ -15,13 +15,22 @@
 
 - name: Create openrc file
   template:
-    src: openrc.j2
-    dest: "{{ openrc_file_dest }}"
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     owner: "{{ openrc_file_owner }}"
     group: "{{ openrc_file_group }}"
     mode: "{{ openrc_file_mode }}"
   tags:
     - openstack_openrc-config
+  with_items:
+    - project_scoped_openrc:
+      src: openrc.j2
+      dest: "{{ openrc_file_dest }}"
+    - system_scoped_openrc:
+      src: openrc-system-scope.j2
+      dest: "{{ openrc_system_file_dest }}"
+      condition: "{{ openrc_system_scope | default(false) | bool }}"
+  when: item.condition | default(True)
 
 - name: Create OpenStack client configuration directory
   file:
