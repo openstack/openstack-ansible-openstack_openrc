@@ -36,20 +36,20 @@ openrc_insecure: >-
   {{ (keystone_service_adminuri_insecure | default(false) | bool or
       keystone_service_internaluri_insecure | default(false) | bool) }}
 ## Create openrc file(s)
-openrc_file_dest: "{{ ansible_env.HOME }}/openrc"
+openrc_file_dest: "{{ ansible_facts['env']['HOME'] }}/openrc"
 openrc_system_file_dest: "{{ openrc_file_dest | dirname }}/openrc.system_scope"
-openrc_file_owner: "{{ ansible_user_id }}"
-openrc_file_group: "{{ ansible_user_id }}"
+openrc_file_owner: "{{ ansible_facts['user_id'] }}"
+openrc_file_group: "{{ ansible_facts['user_id'] }}"
 openrc_file_mode: "0600"
 
 ## Create clouds.yml file
-openrc_openstack_client_config_dir_dest: "{{ ansible_env.HOME }}/.config/openstack"
-openrc_openstack_client_config_dir_owner: "{{ ansible_user_id }}"
-openrc_openstack_client_config_dir_group: "{{ ansible_user_id }}"
+openrc_openstack_client_config_dir_dest: "{{ ansible_facts['env']['HOME'] }}/.config/openstack"
+openrc_openstack_client_config_dir_owner: "{{ ansible_facts['user_id'] }}"
+openrc_openstack_client_config_dir_group: "{{ ansible_facts['user_id'] }}"
 openrc_openstack_client_config_dir_mode: "0700"
 openrc_clouds_yml_file_dest: "{{ openrc_openstack_client_config_dir_dest }}/clouds.yaml"
-openrc_clouds_yml_file_owner: "{{ ansible_user_id }}"
-openrc_clouds_yml_file_group: "{{ ansible_user_id }}"
+openrc_clouds_yml_file_owner: "{{ ansible_facts['user_id'] }}"
+openrc_clouds_yml_file_group: "{{ ansible_facts['user_id'] }}"
 openrc_clouds_yml_file_mode: "0600"
 
 openrc_locale: "{{ ansible_facts.env.LANG | default('C.UTF-8') }}"
