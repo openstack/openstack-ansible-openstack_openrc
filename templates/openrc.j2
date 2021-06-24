@@ -47,4 +47,6 @@ alias openstack='openstack --insecure'
 alias swift='swift --insecure'
 alias tacker='tacker --insecure'
 alias manila='manila --insecure'
+{% else %}
+export OS_CACERT={{ (ansible_facts['os_family'] | lower == 'redhat') | ternary('/etc/pki/tls/certs/ca-bundle.crt', '/etc/ssl/certs/ca-certificates.crt') }}
 {% endif %}
