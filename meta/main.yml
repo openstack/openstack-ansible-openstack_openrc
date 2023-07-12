@@ -18,19 +18,21 @@ galaxy_info:
   description: Inclusion of the typical openstack openrc file
   company: Rackspace
   license: Apache2
-  min_ansible_version: 1.6.6
+  role_name: openstack_openrc
+  namespace: openstack
+  min_ansible_version: "2.10"
   platforms:
     - name: Debian
       versions:
-        - buster
+        - bullseye
     - name: Ubuntu
       versions:
-        - bionic
         - focal
+        - jammy
     - name: EL
       versions:
-        - 8
-  categories:
+        - "9"
+  galaxy_tags:
     - cloud
     - openrc
     - development
