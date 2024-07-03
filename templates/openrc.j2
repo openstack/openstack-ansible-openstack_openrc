@@ -1,6 +1,9 @@
 # {{ ansible_managed }}
 export LC_ALL={{ openrc_locale }}
 
+# Unset conflicting envs
+unset OS_SYSTEM_SCOPE
+
 # COMMON CINDER ENVS
 export CINDER_ENDPOINT_TYPE={{ openrc_cinder_endpoint_type }}
 
