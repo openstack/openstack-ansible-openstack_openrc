@@ -51,5 +51,6 @@ openrc_clouds_yml_file_dest: "{{ openrc_openstack_client_config_dir_dest }}/clou
 openrc_clouds_yml_file_owner: "{{ ansible_facts['user_id'] }}"
 openrc_clouds_yml_file_group: "{{ ansible_facts['user_id'] }}"
 openrc_clouds_yml_file_mode: "0600"
+openrc_clouds_yml_file_default_scope: "{{ (openrc_system_scope | bool) | ternary('system', 'project') }}"
 
 openrc_locale: "{{ ansible_facts.env.LANG | default('C.UTF-8') }}"

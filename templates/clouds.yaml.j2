@@ -3,7 +3,7 @@ clouds:
   default:
     auth:
       auth_url: {{ openrc_os_auth_url }}
-{% if openrc_system_scope | default(false) | bool %}
+{% if openrc_clouds_yml_file_default_scope == 'system' %}
       system_scope: all
 {% else %}
       project_name: {{ openrc_os_tenant_name }}
@@ -24,13 +24,31 @@ clouds:
     verify: false
     insecure: true
 {% endif %}
-{% if openrc_system_scope | default(false) | bool %}
   default_project_scope:
     auth:
       auth_url: {{ openrc_os_auth_url }}
       project_name: {{ openrc_os_tenant_name }}
       tenant_name: {{ openrc_os_tenant_name }}
       project_domain_name: {{ openrc_os_domain_name }}
+      username: {{ openrc_os_username }}
+      password: {{ openrc_os_password }}
+      user_domain_name: {{ openrc_os_domain_name }}
+    region_name: {{ openrc_region_name }}
+    interface: {{ openrc_clouds_yml_interface }}
+{% if openrc_os_auth_url.endswith('v2.0') %}
+    identity_api_version: "2.0"
+{% else %}
+    identity_api_version: "3"
+{% endif %}
+{% if openrc_insecure | bool %}
+    verify: false
+    insecure: true
+{% endif %}
+{% if openrc_system_scope | bool %}
+  default_system_scope:
+    auth:
+      auth_url: {{ openrc_os_auth_url }}
+      system_scope: all
       username: {{ openrc_os_username }}
       password: {{ openrc_os_password }}
       user_domain_name: {{ openrc_os_domain_name }}
