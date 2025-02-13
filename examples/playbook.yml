@@ -1,3 +1,4 @@
+---
 - name: Create OpenStack openrc and clouds.yaml file
   hosts: all
   user: root

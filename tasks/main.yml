@@ -14,7 +14,7 @@
 # limitations under the License.
 
 - name: Create openrc file
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
     owner: "{{ openrc_file_owner }}"
@@ -33,7 +33,7 @@
   when: item.condition | default(True)
 
 - name: Create OpenStack client configuration directory
-  file:
+  ansible.builtin.file:
     dest: "{{ openrc_openstack_client_config_dir_dest }}"
     owner: "{{ openrc_openstack_client_config_dir_owner }}"
     group: "{{ openrc_openstack_client_config_dir_group }}"
@@ -43,7 +43,7 @@
     - openstack_openrc-install
 
 - name: Create clouds.yaml file
-  template:
+  ansible.builtin.template:
     src: clouds.yaml.j2
     dest: "{{ openrc_clouds_yml_file_dest }}"
     owner: "{{ openrc_clouds_yml_file_owner }}"
